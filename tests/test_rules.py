@@ -62,5 +62,15 @@ class TestRules(unittest.TestCase):
     def test_tv_precedes_apple_fallback(self):
         self.assertTrue(matches(self.tv, 'tv.apple.com'))
         self.assertTrue(matches(self.apple, 'tv.apple.com'))
+    def test_apple_fallback_for_unlisted_domain(self):
+        domain = 'www.apple.com'
+        self.assertFalse(any(matches(rules, domain) for rules in
+                             (self.siri, self.ai, self.special, self.tv, self.core)))
+        self.assertTrue(matches(self.apple, domain))
+    def test_mainland_search_is_existing_special_direct(self):
+        domain = 'api.smoot.apple.cn'
+        self.assertIsNone(matches(self.siri, domain))
+        self.assertIsNone(matches(self.ai, domain))
+        self.assertTrue(matches(self.special, domain))
 
 if __name__ == '__main__': unittest.main()
