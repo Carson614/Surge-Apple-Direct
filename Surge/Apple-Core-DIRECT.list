@@ -1,0 +1,27 @@
+# Apple core direct: conservative subset; keep Siri AI and Apple TV rules first.
+# Sources: https://support.apple.com/en-us/101555
+# Apple Account
+DOMAIN,account.apple.com
+DOMAIN,appleid.cdn-apple.com
+DOMAIN,idmsa.apple.com
+DOMAIN,gsa.apple.com
+# iCloud content and mainland services (shared service domains; validate in use)
+DOMAIN-SUFFIX,apple-cloudkit.com
+DOMAIN-SUFFIX,apple-livephotoskit.com
+DOMAIN-SUFFIX,icloud-content.com
+DOMAIN-SUFFIX,icloud.com.cn
+DOMAIN-SUFFIX,apzones.com
+DOMAIN-SUFFIX,gc.apple.com
+# Software downloads and certificate services
+DOMAIN,appldnld.apple.com
+DOMAIN,swcdn.apple.com
+DOMAIN,updates-http.cdn-apple.com
+DOMAIN,updates.cdn-apple.com
+DOMAIN,certs.apple.com
+DOMAIN,crl.apple.com
+DOMAIN,ocsp.apple.com
+DOMAIN,ocsp2.apple.com
+DOMAIN,valid.apple.com
+# App Store download hosts; generic itunes / mzstatic suffixes intentionally omitted.
+DOMAIN,iosapps.itunes.apple.com
+DOMAIN,osxapps.itunes.apple.com
